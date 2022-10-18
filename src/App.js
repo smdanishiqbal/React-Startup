@@ -1,25 +1,18 @@
-import { useState } from "react";
 import "./App.css";
+import Content from "./components/Content";
 import Navbar from "./components/Navbar";
-import Textform from "./components/Textform";
+import { useState } from "react";
 
 function App() {
-  const [mode, setMode] = useState('light')
 
-  const toggleMode = () =>{
-    if (mode === 'ligt'){
-      setMode('dark');
-    }
-    else{
-      setMode('light')
-    }
-  }
+const [mode, setmode] = useState('dark')
+
   return (
     <>
-    <Navbar toggleMode={toggleMode}/>
-    <Textform title="Your Content Here"/>
+      <Navbar mode={mode}></Navbar>
+      <Content title="TESTING"></Content>
     </>
-    
+
   );
 }
 
